@@ -1,0 +1,144 @@
+---
+import GitHub from "./icons/GitHub.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import Java from "./icons/Java.astro";
+import Firebase from "./icons/Firebase.astro";
+import Leaflet from "./icons/Leaflet.astro";
+import Nodejs from "./icons/Nodejs.astro";
+import Reactjs from "./icons/Reactjs.astro";
+import Button from "./Button.astro";
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  NODE: {
+    name: "Node.js",
+    class: "bg-[#003159] text-white",
+    icon: Nodejs,
+  },
+  JAVA: {
+    name: "Java",
+    class: "bg-[#003159] text-white",
+    icon: Java,
+  },
+  FIREBASE: {
+    name: "Firebase",
+    class: "bg-[#003159] text-white",
+    icon: Firebase,
+  },
+  LEAFLET: {
+    name: "Leaflet.js",
+    class: "bg-[#003159] text-white",
+    icon: Leaflet,
+  },
+  REACTJS: {
+    name: "React.js",
+    class: "bg-[#003159] text-white",
+    icon: Reactjs,
+  },
+};
+const PROJECTS = [
+  {
+    title: "React - App de Consulta de Sitios Turistico",
+    description:
+      "Aplicación web con mapa interactivo para la consulta de centros turísticos ubicados en el Centro-Norte del Distrito Metropolitano de Quito. Se creo con desde cero con Node.js, React, Firebase y la libreria open source de mapas Leaflet.js",
+    link: "",
+    github: "",
+    images: ["/projects/MapaHome.webp"],
+    tags: [TAGS.NODE, TAGS.REACTJS, TAGS.FIREBASE, TAGS.LEAFLET],
+  },
+  {
+    title: "Java - App para Clínica Odontológica ",
+    description:
+      "Aplicación desarrollada en Java en el IDE NetBeans aplicando POO. La aplicación permite gestionar la agenda de citas, los historiales de pacientes, y la facturación del consultorio, las cuales las puedes generar en PDF.",
+    link: "",
+    github: "https://github.com/Nevmetal/Java-ClinicaOdontologicaCitas.git",
+    images: ["/projects/JavaHome.webp"],
+    tags: [TAGS.JAVA],
+  },
+];
+---
+
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ images, title, description, tags, link, github }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          {/* 
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt="Image project" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy"  />
+    </div>
+    */}
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            {images.map((image, index: number) => (
+              <div class="carousel-slide">
+                <img
+                  alt={`Image project ${index}`}
+                  class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                  loading="lazy"
+                  src={image}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="grid grid-cols-2 sm:flex sm:flex-row mb-2 gap-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+  <div class="m-auto ">
+    <Button href="/Proyectos">
+      Ver mas
+    </Button>
+  </div>
+  
+</div>

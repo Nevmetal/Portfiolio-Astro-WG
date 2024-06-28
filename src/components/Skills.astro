@@ -1,0 +1,182 @@
+---
+import GitHub from "./icons/GitHub.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Java from "./icons/Java.astro";
+import Nodejs from "./icons/Nodejs.astro";
+import Reactjs from "./icons/Reactjs.astro";
+import Javascript from "./icons/Javascript.astro";
+import Python from "./icons/Python.astro";
+import Csarph from "./icons/Csharp.astro";
+import Git from "./icons/Git.astro";
+import Mongodb from "./icons/MongoDB.astro";
+import Mysql from "./icons/Mysql.astro";
+import Postgresql from "./icons/Postgresql.astro";
+import Html from "./icons/Html.astro";
+import Css from "./icons/Css.astro";
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: " text-white",
+    icon: Tailwind,
+  },
+  NODE: {
+    name: "Node.js",
+    class: " text-white",
+    icon: Nodejs,
+  },
+  JAVA: {
+    name: "Java",
+    class: " text-white",
+    icon: Java,
+  },
+  REACTJS: {
+    name: "React.js",
+    class: " text-white",
+    icon: Reactjs,
+  },
+  JS: {
+    name: "JavaScript",
+    class: " text-white",
+    icon: Javascript,
+  },
+  PYTHON: {
+    name: "Python",
+    class: " text-white",
+    icon: Python,
+  },
+  CSARPH: {
+    name: "C#",
+    class: " text-white",
+    icon: Csarph,
+  },
+  GIT: {
+    name: "Git",
+    class: " text-white",
+    icon: Git,
+  },
+  MONGODB: {
+    name: "MongoDB",
+    class: " text-white",
+    icon: Mongodb,
+  },
+  MYSQL: {
+    name: "Mysql",
+    class: " text-white",
+    icon: Mysql,
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: " text-white",
+    icon: Postgresql,
+  },
+  HTML: {
+    name: "Html",
+    class: " text-white",
+    icon: Html,
+  },
+  CSS: {
+    name: "CSS",
+    class: " text-white",
+    icon: Css,
+  },
+};
+const SKILLS = [
+  {
+    title: "HTML",
+    tag: TAGS.HTML,
+  },
+  {
+    title: "CSS",
+    tag: TAGS.CSS,
+  },
+  {
+    title: "JavaScript",
+    tag: TAGS.JS,
+  },
+  {
+    title: "React",
+    tag: TAGS.REACTJS,
+  },
+
+  {
+    title: "Next.js",
+    tag: TAGS.NEXT,
+  },
+  {
+    title: "Node.js",
+    tag: TAGS.NODE,
+  },
+  {
+    title: "Tailwind CSS",
+    tag: TAGS.TAILWIND,
+  },
+  {
+    title: "Python",
+    tag: TAGS.PYTHON,
+  },
+  {
+    title: "Java",
+    tag: TAGS.JAVA,
+  },
+  {
+    title: "C#",
+    tag: TAGS.CSARPH,
+  },
+  {
+    title: "Git",
+    tag: TAGS.GIT,
+  },
+  {
+    title: "MongoDB",
+    tag: TAGS.MONGODB,
+  },
+  {
+    title: "MySQL",
+    tag: TAGS.MYSQL,
+  },
+  {
+    title: "PostgreSQL",
+    tag: TAGS.POSTGRESQL,
+  },
+];
+---
+
+<article class="text-gray-700 dark:text-gray-300 max-h-52 overflow-y-auto">
+  <div class="skills-list">
+    <ul class="grid grid-cols-3 md:flex md:flex-wrap gap-4">
+      {
+        SKILLS.map(({ title, tag }) => (
+          <li>
+            <h2 class="mr-2 text-center">{title}</h2>
+            <span class={`flex ${tag.class} text-xs  py-1 px-2 `}>
+              <tag.icon class="size-16" />
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</article>
+
+<style>
+  .skills-list {
+    display: flex;
+    overflow-x: auto;
+  }
+  .skills-list ul {
+    align-items: center; /* Alinea verticalmente los elementos */
+  }
+
+  .skills-list h2 {
+    margin-right: 8px; /* Ajusta el margen según sea necesario */
+  }
+</style>

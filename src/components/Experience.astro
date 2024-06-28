@@ -1,0 +1,23 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  
+  {
+    date: "Enero - Julio 2022",
+    title: "Pasante en el Área de Cloud y Datacenter",
+    company: "Puntonet",
+    description:
+      "Control y monitoreo de el entorno de virtualización de máquinas virtuales para diversos clientes, garantizando su disponibilidad y rendimiento óptimo. Documentar detalladamente las especificaciones y configuraciones de las máquinas virtuales, creando informes y registros actualizados para un fácil seguimiento y referencia.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
