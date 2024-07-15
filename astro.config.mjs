@@ -8,6 +8,6 @@ import vercelStatic from '@astrojs/vercel/static';
 export default defineConfig({
   integrations: [tailwind(), robotsTxt()],
 
-  output: 'static',
+ output: 'static',
   adapter: vercelStatic(),
 });
