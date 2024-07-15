@@ -16,6 +16,7 @@ import Mysql from "./icons/Mysql.astro";
 import Postgresql from "./icons/Postgresql.astro";
 import Html from "./icons/Html.astro";
 import Css from "./icons/Css.astro";
+import TS from "./icons/Typescript.astro"
 
 const TAGS = {
   NEXT: {
@@ -88,6 +89,11 @@ const TAGS = {
     class: " text-white",
     icon: Css,
   },
+  TS:{
+    name:"TypeScript",
+    class: " text-white",
+    icon: TS,
+  }
 };
 const SKILLS = [
   {
@@ -101,6 +107,10 @@ const SKILLS = [
   {
     title: "JavaScript",
     tag: TAGS.JS,
+  },
+  {
+    title: "TypeScript",
+    tag: TAGS.TS,
   },
   {
     title: "React",
