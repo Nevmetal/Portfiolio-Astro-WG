@@ -9,6 +9,9 @@ import Firebase from "./icons/Firebase.astro";
 import Leaflet from "./icons/Leaflet.astro";
 import Nodejs from "./icons/Nodejs.astro";
 import Reactjs from "./icons/Reactjs.astro";
+import Typescript from "./icons/Typescript.astro";
+import Javascript from "./icons/Javascript.astro";
+import MongoDB from "./icons/MongoDB.astro";
 import Button from "./Button.astro";
 
 const TAGS = {
@@ -47,10 +50,38 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Reactjs,
   },
+  TS: {
+    name: "TypeScript",
+    class: "bg-[#003159] text-white",
+    icon: Typescript,
+  },
+  JS: {
+    name: "JavaScript",
+    class: "bg-[#003159] text-white",
+    icon: Javascript,
+  },
+  MONGO: {
+    name: "MongoDB",
+    class: "bg-[#003159] text-white",
+    icon: MongoDB,
+  },
 };
 const PROJECTS = [
   {
     ID: "1",
+    title: "One Piece - Consumo de API ",
+    description:
+      "Pagina web con consumo de API de un Anime. Se creo con desde cero con React, Next.js, Tyscript. La pagina muestra el anime de anime como personajes, sagas, episodio, etc. ",
+    link: "",
+    images: [
+      "/projects/OPHome.webp",
+      "/projects/OPCharacter.webp",
+      "/projects/OPFruits.webp",
+    ],
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.REACTJS, TAGS.TS],
+  },
+  {
+    ID: "2",
     title: "React - App de Consulta de Sitios Turistico",
     description:
       "Aplicación web con mapa interactivo para la consulta de centros turísticos ubicados en el Centro-Norte del Distrito Metropolitano de Quito. Se creo con desde cero con Node.js, React, Firebase y la libreria open source de mapas Leaflet.js ",
@@ -68,7 +99,7 @@ const PROJECTS = [
     tags: [TAGS.NODE, TAGS.REACTJS, TAGS.FIREBASE, TAGS.LEAFLET],
   },
   {
-    ID: "2",
+    ID: "3",
     title: "Java - App para Clínica Odontológica ",
     description:
       "Aplicación desarrollada en Java en el IDE NetBeans aplicando POO. La aplicación permite gestionar la agenda de citas, los historiales de pacientes, y la facturación del consultorio, las cuales las puedes generar en PDF.",
@@ -83,11 +114,35 @@ const PROJECTS = [
     ],
     tags: [TAGS.JAVA],
   },
+  {
+    ID: "4",
+    title: "Shorted URL", 
+    description:
+      "Es un acortador de URL con el cual puedes crear URLs cortas. Creado con Javascript, MongoDB y la libreria open source de Mongoose. ",
+    link: "",
+    github: "https://github.com/Nevmetal/Shortened-urls",
+    images: [
+      "/projects/ShortedURL.webp",
+    ],
+    tags: [TAGS.JS, TAGS.REACTJS, TAGS.MONGO],
+  },
+  {
+    ID: "5",
+    title: "To Do List", 
+    description:
+      "Es una aplicación sencilla para llevar un seguimiento de tus tareas. Creado con Tyscript, React y utilizando el localStorage para almacenar las tareas. ", 
+    link: "",
+    github: "https://github.com/Nevmetal/Todo-Typescript-React",
+    images: [
+      "/projects/ToDo.webp",
+    ],
+    tags: [TAGS.TS, TAGS.REACTJS],
+  },
 ];
 ---
 
 {/*<div class="flex flex-col gap-y-16"> */}
-<div class="flex flex-col gap-y-16">
+<div class="flex flex-col  lg:grid md:grid-cols-2 gap-16">
   {
     PROJECTS.map(({ ID, images, title, description, tags, link, github }) => (
       <article class=" space-x-0 space-y-8  group md:flex-row md:space-x-8 md:space-y-0">
@@ -102,6 +157,7 @@ const PROJECTS = [
               />
             ))}
           </div>
+          {images.length>1 ? (
           <button
             class="absolute top-1/2 transform -translate-y-1/2 left-0 rounded-full bg-blue-400/50 text-white hover:bg-yellow-200 dark:hover:bg-slate-600  bg-opacity-50  text-sm md:text-3xl border-none cursor-pointer px-4 py-2  z-10"
             id={`prevBtn_${ID}`}
@@ -114,6 +170,8 @@ const PROJECTS = [
           >
             &gt;
           </button>
+          ):(<></>)}
+         
         </div>
         <div class="w-full">
           <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">

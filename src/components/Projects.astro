@@ -9,6 +9,7 @@ import Firebase from "./icons/Firebase.astro";
 import Leaflet from "./icons/Leaflet.astro";
 import Nodejs from "./icons/Nodejs.astro";
 import Reactjs from "./icons/Reactjs.astro";
+import Typescript from "./icons/Typescript.astro";
 import Button from "./Button.astro";
 
 const TAGS = {
@@ -47,8 +48,21 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Reactjs,
   },
+  TS: {
+    name: "TypeScript",
+    class: "bg-[#003159] text-white",
+    icon: Typescript,
+  },
 };
 const PROJECTS = [
+  {
+    title: "One Piece - Consumo de API ",
+    description:
+      "Pagina web con consumo de API de un Anime. Se creo con desde cero con React, Next.js, Tyscript. La pagina muestra el anime de anime como personajes, sagas, episodio, etc. ",
+    link: "https://one-piece-api-wg.vercel.app/",
+    images: ["/projects/OPHome.webp"],
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.REACTJS, TAGS.TS],
+  },
   {
     title: "React - App de Consulta de Sitios Turistico",
     description:
@@ -69,7 +83,6 @@ const PROJECTS = [
   },
 ];
 ---
-
 
 <div class="flex flex-col gap-y-16">
   {
@@ -135,10 +148,7 @@ const PROJECTS = [
       </article>
     ))
   }
-  <div class="m-auto ">
-    <Button href="/Proyectos">
-      Ver mas
-    </Button>
+  <div class="m-auto">
+    <Button href="/Proyectos"> Ver mas </Button>
   </div>
-  
 </div>
