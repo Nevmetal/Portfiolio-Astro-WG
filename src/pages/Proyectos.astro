@@ -2,7 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 
 import CodeIcon from "@/components/icons/Code.astro";
-import SectionContainer from "@/components/SectionContainer.astro";
+import SectionContainerP from "@/components/SectionContainerP.astro";
 
 import ProjectsAll from "@/components/ProjectsAll.astro";
 ---
@@ -12,7 +12,7 @@ import ProjectsAll from "@/components/ProjectsAll.astro";
   description="Contrata a nevmetal para crear tu aplicación web."
 >
   <main class="px-4 bg-gradient-to-t dark:from-gray-500 from-indigo-200">
-    <SectionContainer id="proyectos" class="py-16 md:py-36">
+    <SectionContainerP id="proyectos" class="py-16 md:py-36">
       <h1
         class="flex items-center justify-center  mb-10 text-5xl font-semibold gap-x-3 text-black/80 dark:text-white"
       >
@@ -20,6 +20,6 @@ import ProjectsAll from "@/components/ProjectsAll.astro";
       </h1>
 
       <ProjectsAll />
-    </SectionContainer>
+    </SectionContainerP>
   </main>
 </Layout>
